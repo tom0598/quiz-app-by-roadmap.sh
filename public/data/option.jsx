@@ -1,14 +1,14 @@
 const Options = [
-    { a: "Saina Nehwal", b: "P.V. Sindhu", c: "Sakshi Malik", d: "Karnam Malleswari" },
-    { a: "Madhya Pradesh", b: "Assam", c: "Uttar Pradesh", d: "Chhattisgarh" },
-    { a: "42nd Amendment", b: "44th Amendment", c: "61st Amendment", d: "73rd Amendment" },
-    { a: "1947", b: "1950", c: "1951", d: "1955" },
-    { a: "Jawaharlal Nehru", b: "Mahatma Gandhi", c: "Sardar Patel", d: "Sarojini Naidu" },
-    { a: "Narcondam Island", b: "Barren Island", c: "Baratang Island", d: "Dhinodhar Hills" },
-    { a: "K.V.K. Sundaram", b: "Sukumar Sen", c: "S.P. Sen Verma", d: "T.N. Seshan" },
-    { a: "Krishna", b: "Cauvery", c: "Godavari", d: "Mahanadi" },
-    { a: "New Delhi", b: "Bengaluru", c: "Gurugram", d: "Hyderabad" },
-    { a: "Article 352", b: "Article 356", c: "Article 360", d: "Article 368" }
+    [  "Saina Nehwal",  "P.V. Sindhu",  "Sakshi Malik",  "Karnam Malleswari" ],
+    [  "Madhya Pradesh",  "Assam",  "Uttar Pradesh",  "Chhattisgarh" ],
+    [  "42nd Amendment",  "44th Amendment",  "61st Amendment",  "73rd Amendment" ],
+    [  "1947",  "1950",  "1951",  "1955" ],
+    [ "Jawaharlal Nehru", "Mahatma Gandhi",  "Sardar Patel",  "Sarojini Naidu" ],
+    [  "Narcondam Island",  "Barren Island",  "Baratang Island",  "Dhinodhar Hills" ],
+    [  "K.V.K. Sundaram",  "Sukumar Sen",  "S.P. Sen Verma",  "T.N. Seshan" ],
+    [  "Krishna",  "Cauvery",  "Godavari",  "Mahanadi" ],
+    [  "New Delhi",  "Bengaluru",  "Gurugram",  "Hyderabad" ],
+    [  "Article 352",  "Article 356",  "Article 360",  "Article 368" ]
 ];
 
 export default Options
