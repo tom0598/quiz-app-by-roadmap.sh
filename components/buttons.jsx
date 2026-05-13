@@ -1,5 +1,6 @@
 import "../public/css/button.css"
 import { useContext, useState } from "react";
+import { DataContext} from "../src/App.jsx";
 
 export default function Button() {
 
