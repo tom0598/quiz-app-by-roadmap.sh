@@ -1,12 +1,40 @@
+import "../public/css/button.css"
+import { useContext, useState } from "react";
 
+export default function Button() {
 
-export default function Button( {Previous, Next, index, Questions}) {
+    const { QuizData, index, Previous, Next, answer, userAns} = useContext(DataContext)
+
+    function checksubmit () {
+        return userAns.some(ans => ans.id === QuizData[index].id)
+    }
+
 
     return (
         <footer>
-            <button onClick={() => Previous()} disabled={index === 0 ? true : false }>Previous</button>
-            <button>Submit</button>
-            <button onClick={() => Next()}  disabled={index === Questions.length ? true : false }>Next</button>
+            {
+                index !== 0 ?
+                <button onClick={() => Previous()}>Previous</button>
+                :
+                null
+            }
+          
+
+            <button 
+                type="submit" 
+                form="quiz-form" 
+                disabled={checksubmit()}
+                >Submit
+            </button>
+
+            {
+                index+1 !== QuizData.length ?
+                <button onClick={() => Next()} >Next</button>
+                :
+                null
+
+            }
+           
         </footer>
     )
 }

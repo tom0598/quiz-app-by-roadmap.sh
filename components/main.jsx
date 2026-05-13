@@ -1,38 +1,51 @@
-import { useContext } from "react";
-import { v4 as uuid } from "uuid"
-
+import { useContext, useState } from "react";
+import "../public/css/main.css"
 import Button from "./buttons.jsx";
-import { DataContext } from "../src/App.jsx";
+import { DataContext} from "../src/App.jsx";
 
 export default function Main() {
-    const {Questions, Options, index, Previous, Next} = useContext(DataContext)
-    const id = uuid()
+    
+    const { QuizData, index, Previous, Next, answer, userAns, currentChoice, handleChoice, wrongAns, rightAns} = useContext(DataContext)
+
+    const currentQuestion = QuizData[index]
+
+    const isSumbit = userAns.some(ans => ans.id === currentQuestion.id)
+
+    
+
 
     return (
         <main>
-            <div>
-                <p>{Questions[index].q}</p> 
+            <div className="question">
+                <p>{QuizData[index].q}</p> 
             </div>
-            <form>
+
+            <form action={answer} id="quiz-form" key={index}>
             {
-                (Options[index]).map((option) => (
-                    <div key={id}>
-                        <input type="radio" value={option} name="choice"/>
-                        <label>{option}</label>
+                currentQuestion.options.map((option) => (
+                    <div key={option} style={{
+                        backgroundColor : 
+                        rightAns.includes(option) || (currentQuestion.a === option && isSumbit ) ?
+                        "green"
+                        : wrongAns.includes(option) ?
+                        "red"
+                        : ""
+                    }}>
+                        <label htmlFor={`opt${index}-${option}`} >
+                            <input type="radio" id={`opt${index}-${option}`}   value={option} name="choice" checked={currentChoice === option} onChange={handleChoice} required  />
+                            &nbsp;
+                
+                            {option} 
+                        </label>
                     </div>
-                  
-        
+                
                 ))
             }
             </form>
-           <Button  
-                Previous={Previous} 
-                Next={Next} 
-                index={index}
-                Questions={Questions}
-            />
 
+           <Button />
         </main>
+       
         
     )
 }
